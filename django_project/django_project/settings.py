@@ -122,6 +122,9 @@ STATIC_URL = 'static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'  # Use Bootstrap 4 for crispy forms
 
+LOGIN_REDIRECT_URL = 'blog-home'  # Redirect to blog home after login
+LOGOUT_REDIRECT_URL = 'blog-home'  # Redirect to blog home after logout
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
