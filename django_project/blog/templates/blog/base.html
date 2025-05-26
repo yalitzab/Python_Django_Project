@@ -29,8 +29,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="#">Home</a>
             <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-            <!-- <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a> -->
+            <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -43,11 +44,21 @@
 </header>
 <!-- Navigation bar END -->
     
-<!-- main -->    
+<!-- main Content Block -->    
     <main role="main" class="container">
     <div class="row">
         <div class="col-md-8">
-        {% block content %}{% endblock %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor%}
+            {% endif %}
+            {% block content %}{% endblock %}
         </div>
         <div class="col-md-4">
         <div class="content-section">
