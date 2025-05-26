@@ -32,8 +32,8 @@ def home(request):
 #     # This function renders the login page of the blog
 #     return render(request, 'blog/login.html', {'title': 'Login'})
 
-# def about(request):
-#     # This function renders the about page of the blog
-#     return render(request, 'blog/about.html', {'title': 'About'})
+def about(request):
+    # This function renders the about page of the blog
+    return render(request, 'blog/about.html', {'title': 'About'})
 
 
